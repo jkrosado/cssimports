@@ -818,3 +818,6 @@ a.gb_3.gb_4.gb_9d.gb_3c:active {
     background: -webkit-linear-gradient(top,#3c7ae4,#3f76d3);
     background: linear-gradient(top,#3c7ae4,#3f76d3);
 }
+gb_C[aria-expanded=true]>svg {
+    fill: none!important;
+}
