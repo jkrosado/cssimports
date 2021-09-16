@@ -1,0 +1,104 @@
+if set-font {
+  .std, .g, .g h3 {
+    font-family: font-f !important;
+    letter-spacing: 0;
+  }
+}
+
+/* reduce result blocks font size */
+ if font-size {
+  
+  /* target firefox as an alternative to "zoom" */
+  @supports (-moz-appearance: none) {
+    .g {
+      font-size: calc(var(--font-sizeV) * var(--sz-norm));
+      margin-bottom: calc(var(--font-sizeV) * var(--margin-b)) !important;
+    }
+    .g.g-blk span > span {
+      font-size: calc(var(--font-sizeV) * var(--sz-gblk));
+    }
+    .g cite {
+      font-size: calc(var(--font-sizeV) * var(--sz-norm));
+    }
+    .g h3 {
+      font-size: calc(var(--font-sizeV) * 20px) !important;
+    }
+  }
+}
+
+/* hide result favicon */
+if hide-favicon {
+  .g img[height="16"][src*="data:image"][width="16"] {
+    display: none;
+  }
+}
+
+/* invert the 2 lines */
+if invert-lines {
+  .g div.r > a > br:first-child ~ h3,
+  .g .rc > div.yuRUbf > a > br:first-child ~ h3,
+  .g .tF2Cxc > div.yuRUbf > a > br:first-child ~ h3,
+  .g > div.yuRUbf > a > br:first-child ~ h3 {
+    display: block;
+  }
+  .g div.r > a > br:first-child ~ h3 ~ div,
+  .g .rc > div.yuRUbf > a > br:first-child ~ h3 ~ div,
+  .g .tF2Cxc > div.yuRUbf > a > br:first-child ~ h3 ~ div,
+  .g > div.yuRUbf > a > br:first-child ~ h3 ~ div {
+    position: static;
+    margin-top: -0.2em;
+  }
+  .g div.r > a > br:first-child ~ h3 ~ div *,
+  .g .rc > div.yuRUbf > a > br:first-child ~ h3 ~ div *,
+  .g .tF2Cxc > div.yuRUbf > a > br:first-child ~ h3 ~ div *,
+  .g > div.yuRUbf > a > br:first-child ~ h3 ~ div * {
+    color: green !important;
+  }
+  .g div.r > a > br:first-child,
+  .g .rc > div.yuRUbf > a > br:first-child,
+  .g .tF2Cxc > div.yuRUbf > a > br:first-child,
+  .g > div.yuRUbf > a > br:first-child {
+    display: none;
+  }
+  .g div.r > a ~ div,
+  .g .rc > div.yuRUbf > a ~ div,
+  .g .tF2Cxc > div.yuRUbf > a ~ div,
+  .g > div.yuRUbf > a ~ div {
+    position: static;
+    margin-top: -1.6em;
+    margin-bottom: 1.6em;
+  }
+}
+
+/* whitespace */
+if get-ws {
+  if head-mg {
+    .g div.r > a > br:first-child ~ h3,
+    .g .rc > div.yuRUbf > a > br:first-child ~ h3,
+    .g .tF2Cxc > div.yuRUbf > a > br:first-child ~ h3,
+    .g > div.yuRUbf > a > br:first-child ~ h3 {
+      margin-bottom: -1px;
+    }
+    if invert-lines {
+    }
+  }
+  if line-h != 1.57 {
+    .g .st, .g .s > div,
+    .g .rc .aCOpRe, .g .rc .IsZvec > div,
+    .g .tF2Cxc .aCOpRe, .g .tF2Cxc .IsZvec > div, .g.tF2Cxc .IsZvec > div {
+      line-height: line-h;
+    }
+  }
+  if bottom-mg != 27px {
+    .g {
+      --margin-b: bottom-mg;
+      margin-bottom: bottom-mg;
+    }
+  }
+
+}
+
+/* to prevent the userstyle from disappearing from stylus menu when all options are disabled */
+.none {
+  dummy:1;
+}
